@@ -3,17 +3,25 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: Constraint propagation is used to solve the naked twins problem by identifying
+a new strategy in sudoku games. In this case, it is that if two (or more in other
+variants of the "naked" strategies) boxes contain the same two value options, their
+shared peers **cannot** be either one of those values in the solution. By applying
+this constrain to the Naked Twins' shared peers, it helps reduce the number of
+possible solutions that need to be evaluted.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: Unlike Naked Twins, diagonal sudoku is not a new strategy, but simply a new rule
+for the game that expands the definition of units and peers. As a result, since we are already limiting the possible solutions based on units and peers (through rows,
+columns, and squares), we just need to simply update those existing constraints to include
+the main diagonals in the sudoku table.
 
 ### Install
 
 This project requires **Python 3**.
 
-We recommend students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project. 
+We recommend students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project.
 Please try using the environment we provided in the Anaconda lesson of the Nanodegree.
 
 ##### Optional: Pygame
@@ -41,4 +49,3 @@ The setup is simple.  If you have not installed the client tool already, then yo
 To submit your code to the project assistant, run `udacity submit` from within the top-level directory of this project.  You will be prompted for a username and password.  If you login using google or facebook, visit [this link](https://project-assistant.udacity.com/auth_tokens/jwt_login) for alternate login instructions.
 
 This process will create a zipfile in your top-level directory named sudoku-<id>.zip.  This is the file that you should submit to the Udacity reviews system.
-
